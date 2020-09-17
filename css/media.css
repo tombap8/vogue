@@ -149,6 +149,11 @@
         font-size: 20px;
     }
 
+    /*상단영역박스 - 높이변경*/
+    #top {
+        height: 80px;
+    }
+
 
     /*float된 박스를 width:100%로 변경!*/
     .news,
@@ -203,9 +208,9 @@
         background-position: center 77px;
         background-size: 200px;
     }
-    
+
     /*주소박스*/
-    #info address{
+    #info address {
         width: auto;
         padding: 15px;
     }
