@@ -59,7 +59,7 @@
 
 
     /*gnb파티션*/
-    #top > div:last-of-type{
+    #top > div:last-of-type {
         width: 100%;
     }
 
@@ -73,18 +73,18 @@
     }
 
     /*상단부 높이값 변경*/
-    #top{
+    #top {
         height: 206px;
     }
 
 
     /*큰로고 보임*/
-    .blogo{
+    .blogo {
         display: inline;
     }
 
     /*작은로고 숨김*/
-    .slogo{
+    .slogo {
         display: none;
     }
 
@@ -103,20 +103,35 @@
         - 무조건 이미 설정된 선택자를 변경한다!
         - 적용우선 순위를 걱정할 필요가 없다!
     */
+
     /*상단영역 높이변경*/
+    #top {
+        height: 120px;
+    }
 
     /*로고 파티션박스 가로크기 변경*/
-
+    #top > div:first-of-type {
+        width: 25%;
+    }
 
     /*gnb메뉴 숨기기*/
-
+    .gnb {
+        display: none;
+    }
 
 
     /*햄버거버튼, 검색버튼 보이기*/
-
+    #ham,
+    #magni {
+        display: block;
+    }
 
     /*컨텐츠 배너 배열변경하기
     3,1-> 2,2*/
+    #mban li,
+    #mban li:last-child {
+        width: 50%;
+    }
 
 
 }
@@ -129,56 +144,71 @@
 /*500px이하 모바일 미디어쿼리*/
 @media only screen and (max-width:500px) {
 
-    /*글자크기변경*/
+    /*전체 글자크기 조정*/
+    html {
+        font-size: 20px;
+    }
 
 
+    /*float된 박스를 width:100%로 변경!*/
+    .news,
+    .mban {
+        width: 100%;
+    }
 
-    /*가로스크롤 없애기!*/
-    /*html,body를 화면기준가로폭*/
+    /*
+        참고로 flex 인 경우(display: flex;)
+    
+        flex-direction: column;
+        으로만 설정하면 한줄에 하나씩 옴!
+    */
 
+    /*absolute 속박스를 static박스로 변경!
+        - static으로 바꾸는 이유?
+        위치설정값 등을 무력화시켜서 일반 박스로 변경해줌!
+    */
+    .rbxIn {
+        position: static;
+    }
 
+    /*비율유지 가상요소 없애기!
+    단, 두번째 가상요소만 없앤다*/
+    .rbx2::before {
+        display: none;
+    }
 
+    /*메뉴 배너 li박스 width:100%로 변경 - 한줄에 하나의 박스*/
+    /*
+        높이값을 보이는 화면(view port)을 기준으로 50%비율로 설정함!
+        50vh
+    */
+    #mban li,
+    #mban li:last-child {
+        width: 100%;
+        height: 50vh;
+    }
 
-    /*상단영역 높이변경*/
+    /*뉴스 각 li 높이값 뷰포트높이값 기준 변경*/
+    #news li {
+        height: 50vh;
+    }
 
+    /*로고 크기변경*/
+    #top > div:first-of-type {
+        width: 40%;
+    }
 
-    /*로고 파티션박스 가로크기 변경*/
-
-
-    /*햄버거버튼*/
-
-
-    /*배너 비율변경하기*/
-
-
-    /*파티션 박스(col-) 전체를 width:100%로 변경!*/
-    /*한줄에 하나씩!*/
-
-
-    /*비율유지 해제*/
-    /*추가비율-컨텐츠박스 없앰*/
-
-
-    /*비율박스의 속박스-일반박스화*/
-
-
-    /*뉴스박스 패딩제거*/
-
-
-
-
-    /*뉴스글자 조정*/
-
-
-    /*메뉴배너 가로폭 100%, 높이값 특정px*/
-
-
-
-    /*하단영역*/
-    /*배경로고 조정*/
-
-
-    /*하단주소 조정*/
+    /*하단로고*/
+    #info {
+        background-position: center 77px;
+        background-size: 200px;
+    }
+    
+    /*주소박스*/
+    #info address{
+        width: auto;
+        padding: 15px;
+    }
 
 
 
